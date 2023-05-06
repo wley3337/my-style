@@ -4,6 +4,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    // tells eslint what things prettier will handle
+    'eslint-config-prettier'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
@@ -11,4 +13,15 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
   },
+settings:{
+    react:{
+        version:'detect',
+    },
+    'import/resolver':{
+        node:{
+            paths:['src'],
+            extensions:['.js', '.jsx', '.ts', '.tsx']
+        }
+    },
+},
 }
