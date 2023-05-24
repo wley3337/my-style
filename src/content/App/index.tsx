@@ -2,13 +2,21 @@ import { useState } from 'react'
 import reactLogo from 'src/assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useGetPokemonByNameQuery } from 'src/services/pokemon'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const { data, isLoading } = useGetPokemonByNameQuery('blastoise')
+  console.log({ isLoading })
   return (
     <>
       <div>
+        <div>{isLoading ? 'true' : 'false'}</div>
+        <img
+          src={data?.sprites?.front_shiny}
+          className="logo react"
+          alt="blastoise image"
+        />
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
