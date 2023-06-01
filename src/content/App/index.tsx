@@ -3,11 +3,13 @@ import reactLogo from 'src/assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useGetPokemonByNameQuery } from 'src/services/pokemon'
+import { useGetUserByIdQuery } from 'src/services/coreApi/users/usersApi'
 
 function App() {
   const [count, setCount] = useState(0)
   const { data, isLoading } = useGetPokemonByNameQuery('blastoise')
-  console.log({ isLoading })
+  const { data: userData, isLoading: userIsLoading } = useGetUserByIdQuery(1)
+  console.log({ isLoading, userData, userIsLoading })
   return (
     <>
       <div>
