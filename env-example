@@ -1,0 +1,4 @@
+# All variables that need to be accessed inside the app need to be prefaced with `VITE`
+
+VITE_CORE_API_URL='http://127.0.0.1:8000/api'
+
